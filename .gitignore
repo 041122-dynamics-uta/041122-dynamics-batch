@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# the bin file is recreated every time the program in compiled, so it doesn't need to be uploaded to github.
+bin/
+
 # User-specific files
 *.rsuser
 *.suo
