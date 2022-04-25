@@ -45,11 +45,6 @@ namespace oopdemo
 
 
 
-            //Console.WriteLine($"The full name with the middle name is {sh1.GetFullName()}.");
-
-
-
-
         }
     }
 }
