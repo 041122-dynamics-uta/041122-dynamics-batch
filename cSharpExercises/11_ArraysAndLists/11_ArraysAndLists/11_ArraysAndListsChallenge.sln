@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11_ArraysAndListsChallenge", "11_ArraysAndListsChallenge.csproj", "{0CE00FF0-D271-4E82-ABBA-9A31AC05BE1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11_ArraysAndListsChallenge.Tests", "..\11_ArraysAndListsChallenge.Tests\11_ArraysAndListsChallenge.Tests.csproj", "{CCA26DEC-D22B-4C17-A1A7-52B9EC24D44C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CE00FF0-D271-4E82-ABBA-9A31AC05BE1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE00FF0-D271-4E82-ABBA-9A31AC05BE1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE00FF0-D271-4E82-ABBA-9A31AC05BE1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE00FF0-D271-4E82-ABBA-9A31AC05BE1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCA26DEC-D22B-4C17-A1A7-52B9EC24D44C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA26DEC-D22B-4C17-A1A7-52B9EC24D44C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA26DEC-D22B-4C17-A1A7-52B9EC24D44C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA26DEC-D22B-4C17-A1A7-52B9EC24D44C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7429F619-F73B-49E9-8172-AB351FD34E62}
+	EndGlobalSection
+EndGlobal
