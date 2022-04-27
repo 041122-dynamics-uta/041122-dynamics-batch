@@ -2,12 +2,16 @@ namespace ClassesDemo
 {
     internal class Human : Animal, Ipilot
     {
+        #region This is the properties region
         public string FavoriteColor { get; set; } = "";
         public string MiddleName { get; set; } = "";
-        int Ipilot.PilotIdNumber { get; set; } = 0;
-        DateTime Ipilot.DateOfCertification { get; set; } = DateTime.Now;
-        string Ipilot.TypeOfPlane { get; set; } = "origami";
 
+        public int PilotIdNumber { get; set; } = 0;
+        public DateTime DateOfCertification { get; set; } = DateTime.Now;
+        public string TypeOfPlane { get; set; } = "origami";
+        #endregion
+
+        #region This is the constructors region
         public Human(string fname, string lname, string favColor) : base(fname, lname)
         {
             this.FavoriteColor = favColor;
@@ -18,22 +22,24 @@ namespace ClassesDemo
             this.FavoriteColor = favColor;
             this.MiddleName = mname;
         }
+        #endregion
+
+        #region This region is for Methods
 
         public void AnimalAge(int age)
         {
             this.MyAnimalAge.AnimalAge = age;
         }
 
-
-
-        // methods section
         internal override string FullName()
         {
             string fullName = $"{this.Fname} {this.MiddleName} {this.Lname}";
             return fullName;
         }
 
-        string Ipilot.Greeting()
+        //  I 'explicitely' implemented the interface methods (using 
+        // their full name, i.e., Ipilot.Greeting()), therefore they could not be 
+        public string Greeting()
         {
             //throw new NotImplementedException();
             return "Welcome to the Friendly Skies. Where a single bird means yo u end up in the Hudson. Happy Flying!";
@@ -44,7 +50,7 @@ namespace ClassesDemo
         /// including the pilots name and number of says.
         /// </summary>
         /// <returns></returns>
-        string Ipilot.TimeSinceCertification()
+        public string TimeSinceCertification()
         {
             //throw new NotImplementedException();
             return "";
@@ -54,10 +60,10 @@ namespace ClassesDemo
         /// This method will take a datetime and store is at a mm/dd/yyyy DateTime.
         /// </summary>
         /// <param name="d"></param>
-        internal void Ipilot.SetDateOfCertification(DateTime d)
+        public void SetDateOfCertification(DateTime d)
         {
             //throw new NotImplementedException();
-
         }
+        #endregion
     }
 }

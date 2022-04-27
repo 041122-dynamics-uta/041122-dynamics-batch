@@ -27,4 +27,5 @@ Console.WriteLine($"The age of {h2.FullName()} is {h2.AnimalAge()}");
 
 Human h3 = new Human("Sully", "Sullenberger", "Slimy Green");
 
-h3
+h3.SetDateOfCertification(new DateTime(2000, 1, 1));
+
