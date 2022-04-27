@@ -24,3 +24,7 @@ Console.WriteLine($"This young whipper snapper, {h2.Fname} {h2.MiddleName} {h2.L
 
 h2.AnimalAge(30);
 Console.WriteLine($"The age of {h2.FullName()} is {h2.AnimalAge()}");
+
+Human h3 = new Human("Sully", "Sullenberger", "Slimy Green");
+
+h3
