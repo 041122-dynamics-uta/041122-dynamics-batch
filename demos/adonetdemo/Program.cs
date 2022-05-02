@@ -22,6 +22,8 @@ namespace adonetdemo
 
 
             //QUERY 1
+            Console.WriteLine("\n\tEntering the 1st Query\n");
+
             /*Create your query*/
             string myQuery1 = "SELECT AddressID, City, PostalCode FROM SalesLT.Address WHERE AddressID >100 ORDER BY PostalCode, AddressID;";
             //this using block creates teh SqlConnection.
@@ -45,7 +47,9 @@ namespace adonetdemo
 
             //QUERY 2
             /*Create your query*/
-            Console.WriteLine("WHat is the minimum AddressID you want?");
+            Console.WriteLine("\n\tEntering the 2nd Query\n");
+
+            Console.WriteLine("What is the minimum AddressID you want?");
             string maxAddyId = Console.ReadLine();// this is dangerous bc of SQL Injection => Select * FROM Address;
 
             string myQuery2 = $"SELECT AddressID, City, PostalCode FROM SalesLT.Address WHERE AddressID > @maxId ORDER BY PostalCode, AddressID;";
