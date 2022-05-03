@@ -25,15 +25,15 @@ namespace adonetdemo
             Console.WriteLine("\n\tEntering the 1st Query\n");
 
             /*Create your query*/
-            string myQuery1 = "SELECT AddressID, City, PostalCode FROM SalesLT.Address WHERE AddressID >100 ORDER BY PostalCode, AddressID;";
+            string myQuery1 = "SELECT city, AddressID, PostalCode FROM SalesLT.Address WHERE AddressID >100 ORDER BY PostalCode, AddressID;";
             //this using block creates teh SqlConnection.
             // the SqlConnection is the object that communicates with the Db.
             using (SqlConnection query1 = new SqlConnection(connectionString))
             {
                 //The SqlCommand object uses the query text along with the SqlConnection object to open a connection and send the query.
-                SqlCommand command = new SqlCommand(myQuery1, query1);
+                SqlCommand command = new SqlCommand(myQuery1, query1/*0xf35ba*/);
 
-                query1.Open();//open the connection to the Db
+                command.Connection.Open();//open the connection to the Db
 
                 SqlDataReader results = command.ExecuteReader();//actually conduct the query.
 
@@ -63,12 +63,23 @@ namespace adonetdemo
 
                 connection.Open();//open the connection to the Db
 
-                SqlDataReader results = command.ExecuteReader();//actually conduct the query.
-
-                while (results.Read())
+                try
                 {
-                    Console.WriteLine($"The address is => {results[0]} {results[1]}, {results[2]}");
+                    SqlDataReader results = command.ExecuteReader();//actually conduct the query.
+                    while (results.Read())//read this result set line by line. Each line is returned as an (untitled) array.
+                    {
+                        Console.WriteLine($"The address is => {results[0]} {results[1]}, {results[2]}");
+                    }
                 }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine($"There was an exception {ex.Message}. ");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"There was an exception {ex.Message}. ");
+                }
+
                 connection.Close();
             }
 
