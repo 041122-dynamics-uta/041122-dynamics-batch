@@ -60,7 +60,6 @@ namespace adonetdemo
                 //The SqlCommand object uses the query text along with the SqlConnection object to open a connection and send the query.
                 SqlCommand command = new SqlCommand(myQuery2, connection);
                 command.Parameters.AddWithValue("@maxId", maxAddyId);
-
                 connection.Open();//open the connection to the Db
 
                 try
@@ -106,10 +105,6 @@ namespace adonetdemo
                 }
                 connection.Close();
             }
-
-
-
-
         }
     }
 }
