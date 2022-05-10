@@ -26,6 +26,44 @@
 </head>
 
 <body>
+  <form name="myform">
+    <label for="mydatetime">Date of Birth</label>
+    <input type="datetime-local" name="mydatetime" id="mdt">
+
+    <label for="checkbox1">Check this for secrecy</label>
+    <input type="checkbox" name="checkbox1" id="checkboxId"> <br>
+    <input type="color" name="color1" id="colorid">
+    <br><input type="text" class="password" name="text1">
+    <input type="file" name="myfile1" id="myfileId">
+    <br>
+    <select name="myDropdown" id="myDropdownId">
+      <option value="0">Ford</option>
+      <option value="1">Chevy</option>
+      <option value="2">Ducati</option>
+      <option value="3">Pugeot</option>
+    </select>
+    <input type="submit" value="Submit1"><br>
+  </form>
+  <br><br>
+
+  <form name="myform1" id="myformid">
+    <label for="fname">First Name:</label>
+    <input type="text" name="fname" id="fnameid"><br>
+    <label for="lname">Last Name:</label>
+    <input type="text" name="lname" id="lnameid"><br>
+    <label for="fnum">Phone Number:</label>
+    <input type="text" name="fnum" id="fnumid"><br>
+    <br>
+    <select name="myDropdown" id="myDropdownId">
+      <option value="0">Ford</option>
+      <option value="1">Chevy</option>
+      <option value="2">Ducati</option>
+      <option value="3">Pugeot</option>
+    </select><br>
+    <input type="color" name="color1" id="colorid"><br>
+    <input type="submit" value="Submit the Form">
+  </form>
+  <br>
   <p style="background-color:red; width: 150px;">This is a paragraph.
   </p>other text
   <!-- thew class attribute can be applied ot as many elements as you want on a page. -->
@@ -91,23 +129,6 @@
     </tbody>
   </table>
 
-  <form onsubmit="mydate()">
-    <label for="mydatetime">Date of Birth</label>
-    <input type="datetime-local" name="mydatetime" id="mdt">
-
-    <label for="checkbox1">Check this for secrecy</label>
-    <input type="checkbox" name="checkbox1" id="checkboxId"> <br>
-    <input type="color" name="color1" id="colorid">
-    <br><input type="text" class="password">
-    <input type="file" name="myfile1" id="myfileId">
-    <br><select name="myDropdown" id="myDropdownId">\
-      <option value="0">Ford</option>
-      <option value="1">Chevy</option>
-      <option value="2">Ducati</option>
-      <option value="3">Pugeot</option>
-    </select>
-    <input type="submit" value="Submit1"><br>
-  </form>
 
 
   <p>This & &gt; (the thing) is GRRRREAT!</p>
@@ -116,12 +137,6 @@
   <h3>&#65504;</h3>
   <h3>&#x40;</h3>
   <h3>Apple&#x2122; is overpriced.</h3>
-
-
-
-
-
-
 
   <script src="./htmlDemo.js"></script>
 </body>
