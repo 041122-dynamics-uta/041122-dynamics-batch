@@ -14,7 +14,7 @@ namespace adonetdemo
             /* Step1. Download Microsoft.Data.SqlClient */
 
             /* Step 2. Create a connection string variable.
-            Normally, thie variable is hidden and is not pushed to Github.
+            Normally, this variable is hidden and is not pushed to Github.
             That is reckless.*/
             //Console.WriteLine("Please tell me your Db password!");
             // string pswd = Console.ReadLine();

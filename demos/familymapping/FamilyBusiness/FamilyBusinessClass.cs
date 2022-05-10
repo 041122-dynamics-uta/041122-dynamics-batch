@@ -14,9 +14,6 @@ public class FamilyBusinessClass
     public List<Member> MembersList()
     {
         List<Member> ml = _repo.MembersList();
-
-
-
         return ml;
     }
 }
