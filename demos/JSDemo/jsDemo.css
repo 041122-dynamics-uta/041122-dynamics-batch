@@ -1,0 +1,100 @@
+/* style the selector list */
+h1#myh1id:hover,
+h3:hover,
+h5:hover {
+  font-size: 20px;
+  background-color: blue;
+}
+
+h5 {
+  width: 30%;
+  border: 10px solid brown;
+}
+
+/* style it after it's been clicked */
+a:visited {
+  color: skyblue;
+}
+
+/* style the image when hover over */
+img:hover {
+  border: 10px dotted black;
+}
+
+p {
+  font-size: 10px;
+}
+
+/* style the first line of a paragraph */
+/* p::first-line {
+  font-size: large;
+  color: aqua;
+} */
+
+/* style the first letter of a <p> */
+p::first-letter {
+  font-size: 50px;
+  color: rgb(0, 100%, 50%);
+}
+
+/* if you are a first child AND you are a <p>  */
+p:first-child::first-line {
+  font-size: 20px;
+  color: rgb(241, 51, 57);
+}
+
+/* select and h2 that is a descendent of a div */
+div h2 {
+  color: brown;
+}
+
+/* style the h1 children of any div */
+div>h1 {
+  background-color: aqua;
+}
+
+div>.myclass {
+  background-color: blueviolet;
+}
+
+h6~h4 {
+  background-color: blue;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#specId {
+  background-color: blue;
+}
+
+.specClass {
+  background-color: skyblue !important;
+}
+
+h1 {
+  background-color: purple;
+}
+
+#inheritid h6 {
+  color: blue !important;
+}
+
+span {
+  color: yellowgreen;
+  /* visibility: hidden; */
+  display: none;
+}
+
+/* #imgId {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 3px solid #73AD21;
+} */
+
+#boxmodel {
+  background-color: lightcoral;
+  padding: 20px 50px;
+  border: 10px solid black;
+  margin: 0px 20px 30px -20px;
+}

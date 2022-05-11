@@ -41,10 +41,6 @@ public class FamilyRepoClass
 
             query1.Close();
             return ml;
-            // while (results.Read())
-            // {
-            //     Console.WriteLine($"The address is => {results[0]} {results[1]}, {results[2]}");
-            // }
         }
     }
 }
