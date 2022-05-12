@@ -238,5 +238,86 @@ console.log(myGuy3.age);
 let myGuy4 = JSON.parse(myGuy3);// you must parse the string to get the JSON object and access the properties.
 console.log(myGuy4.age);
 
+// below is Classes and Objects
+// if you  aren't going to reuse the object types lots, it;s fine to use a 
+// object literal or a function expression.
+function myCarMaker(make, model, year) {
+  return {
+    make,
+    model,
+    year,
+
+    YearIncrementor: () => ++year,
+    MakeModelConcatenator: () => `${make} ${model}`
+  }
+};
+
+let myCar1 = myCarMaker('Ford', 'Lightning', 2022);
+console.log(`The car is a ${myCar1.year} ${myCar1.make} ${myCar1.model}`);
+
+let myCar2 = myCarMaker('Tesla', 'CyberTruck', 2024);
+console.log(`The car is a ${myCar2.year} ${myCar2.make} ${myCar2.model}`);
+console.log(`NOW, the car is a ${myCar2.YearIncrementor()} ${myCar2.make} ${myCar2.model}`);
+console.log(`NOW, the car is a ${myCar2.YearIncrementor()} ${myCar2.MakeModelConcatenator()}`);
+
+myCar1.NumAxles = 5;
+console.log(myCar1.NumAxles);
+
+//if you are going to reuse this object construction more tha n once, 
+// create a class declaration.
+class MyCarClass {
+  constructor(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+  }
+  get carData() {
+    return `${this.year} ${this.make} ${this.model}`
+  }
+
+  set MakeModel(v) {
+    [this.make, this.model] = v.split(" ");    // this will split up a string into a string[] based on the arg to .split()
+  }
+
+  // YearIncrementor: () => ++year,
+  //   MakeModelConcatenator: () => `${make} ${model}`
+};
+
+let myCar3 = new MyCarClass("Ford", "Model T", 1918);
+console.log(`The first assembly line car was the ${myCar3.year} ${myCar3.make} ${myCar3.model}`);
+myCar3.numPassengers = 5;
+console.group(`The number of passengers is ${myCar3.numPassengers}`);
+
+console.log(`The car is a ${myCar3.carData}`);
+
+let myCar4 = new MyCarClass("b", "z", 1883);
+console.log(`The first assembly line car was the ${myCar4.year} ${myCar4.make} ${myCar4.model}`);
+myCar4.MakeModel = "Benz English";
+console.log(`The first amake, model, yearssembly line car was the ${myCar4.year} ${myCar4.make} ${myCar4.model}`);
+
+class MyDerivedCarClass extends MyCarClass {
+  constructor(make, model, year, msrp, color) {
+    super(make, model, year);
+    this.msrp = msrp;
+    this.color = color;
+  }
+}
+
+
+let myCar5 = new MyDerivedCarClass("Rolls Royce", "Phantom", 1983, 19.999, 'black');
+console.log(`The derived model car was the ${myCar5.year} ${myCar5.make} ${myCar5.model}\n It's price is ${myCar5.msrp} ${myCar5.color}`);
+
+let myCar6 = myCar5;// sharing the HEAP memory location.. NOT copying the data.
+myCar6.MakeModel = "Volkwagon Beatle";
+console.log(`MyCar6 the ${myCar6.year} ${myCar6.make} ${myCar6.model}\n It's price is ${myCar6.msrp} ${myCar6.color}`);
+console.log(`MyCar5 the ${myCar5.year} ${myCar5.make} ${myCar5.model}\n It's price is ${myCar5.msrp} ${myCar5.color}`);
+
+
+
+
+
+
+
+
 
 
