@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <p>Please guess a number from 0 and 100.
+      You have 10 guesses.
+      I will tell you if you are too low or too high.</p>
+  </div>
+  <div>
+    <input type="number" name="guess" min="0" max="100" id="guess">
+    <input type="submit" value="Submit your number" id="submit">
+  </div>
+  <div>
+    <h2 id="result"></h2>
+  </div>
+  <div>
+    <ol id="guessList">
+    </ol>
+  </div>
+  <!-- put a button here whe the game is over -->
+
+  <script src="guessingGame.js"></script>
+</body>
+
+</html>
