@@ -16,4 +16,11 @@ public class FamilyBusinessClass
         List<Member> ml = _repo.MembersList();
         return ml;
     }
+
+    public Member NewMember(string fname, string lname, string age, string familyId)
+    {
+        //pass the new data to the repo layer to insert int to the db.
+        Member m = _repo.NewMember(fname, lname, age, familyId);
+        return m;
+    }
 }
