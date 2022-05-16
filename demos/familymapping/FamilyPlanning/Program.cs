@@ -11,10 +11,49 @@ namespace familymapping
         //the entrypoint for ANY C# program is the 'static void main()' method
         static void Main(string[] args)
         {
+            FamilyRepoClass frc = new FamilyRepoClass();// to go into the constructor of the business class
+            FamilyBusinessClass fb = new FamilyBusinessClass(frc);
 
             //welcome and login/register loop
             Console.WriteLine("Hello World!");
             //start the program here!
+            Member newMember = new Member();
+            bool moveOn = false;// this is to signify that the user correctly entered the value.
+            while (moveOn == false)
+            {
+                Console.WriteLine("Would you like to Log in. Click 1\nWould you like to register? Click 2.");
+                string registerOrLogin = Console.ReadLine();
+                switch (registerOrLogin)
+                {
+                    case "1":
+                        Console.WriteLine("Please enter your unique username");
+                        string uUsername = Console.ReadLine();
+                        Console.WriteLine("Please enter your unique password");
+                        string uPassword = Console.ReadLine();
+                        moveOn = true;
+                        break;
+                    case "2":
+                        Console.WriteLine("Please enter your first name");
+                        string fname = Console.ReadLine();
+                        Console.WriteLine("Please enter your last name");
+                        string lname = Console.ReadLine();
+                        Console.WriteLine("Please enter your age");
+                        string age = Console.ReadLine();
+                        Console.WriteLine("Please enter your familyId");
+                        string familyId = Console.ReadLine();
+                        moveOn = true;
+                        newMember = fb.NewMember(fname, lname, age, familyId);
+                        break;
+                    default:
+                        Console.WriteLine("That wasn't a valid choice. Please try again.");
+                        break;
+                }
+            }
+
+            //now enter ther username and pasword into the Db as a new member
+            Console.WriteLine($"Hey, {newMember.Fname} {newMember.lname}. You are {newMember.Age} years old. fam is {newMember.FamilyId}");
+
+
             Console.WriteLine("Would you like to see a list of all the members?");
             string answer = Console.ReadLine();
 
@@ -52,9 +91,6 @@ namespace familymapping
 
 
 
-            FamilyRepoClass frc = new FamilyRepoClass();
-
-            FamilyBusinessClass fb = new FamilyBusinessClass(frc);
 
             if (answer.CompareTo("yes") == 0)
             {
@@ -63,9 +99,8 @@ namespace familymapping
 
                 foreach (Member m in members)
                 {
-                    Console.WriteLine($"The members data is Fname-{m.Fname}.....");
+                    Console.WriteLine($"The member is {m.Fname} {m.lname}");
                 }
-
             }
 
         }

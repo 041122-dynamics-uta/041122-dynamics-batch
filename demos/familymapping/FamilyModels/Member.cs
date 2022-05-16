@@ -11,5 +11,4 @@ public class Member
     public DateTime DateCreated { get; set; } = DateTime.Now;
     public FamilyClass? Family { get; set; }
     public int FamilyId { get; set; }
-
 }
