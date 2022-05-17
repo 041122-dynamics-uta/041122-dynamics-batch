@@ -4,6 +4,7 @@ using FamilyBusiness;
 using FamilyModels;
 using FamilyRepository;
 
+//all UI happens here.
 namespace familymapping
 {
     class Program
